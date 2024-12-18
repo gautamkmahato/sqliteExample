@@ -4,6 +4,8 @@ const app = express();
 const db = require('./db/database');
 const categoryRouter = require('./routes/categoryRouter');
 const postRouter = require('./routes/postRouter');
+const userRouter = require('./routes/userRouter');
+
 
 // Middleware to parse JSON request bodies
 const corsOptions = {
@@ -16,6 +18,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use('/api/category', categoryRouter);
 app.use('/api/post', postRouter);
+app.use('/api/user', userRouter);
 
 
 app.get('/', (req, res) =>{
